@@ -1,0 +1,59 @@
+body {
+	background-color: #fff;
+}
+
+.profil-image {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+}
+.outline-image {
+	z-index: 0;
+	position: absolute;
+	width: 22rem;
+	/* margin-left: -32rem; */
+}
+
+.img-profil {
+	z-index: 1000;
+	position: relative;
+}
+
+.profil-card {
+	height: auto;
+	background-color: #e5f0e8;
+	/* margin: -6rem 0 2rem; */
+	padding: 2rem 1.6rem;
+}
+
+section#Gambaran {
+	background-color: #fff !important ;
+}
+
+.listMisi li {
+	line-height: 1.625;
+	margin: 0.625rem 0;
+}
+
+.mapBox {
+	/* position: relative;
+	width: 37.5rem;
+	height: 31.25rem; */
+	background-color: #fff;
+}
+
+.mapBox iframe {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+@media (min-width: 992px) {
+	.outline-image {
+		z-index: 0;
+		position: absolute;
+		width: 32rem;
+		/* margin-left: -32rem; */
+	}
+}
