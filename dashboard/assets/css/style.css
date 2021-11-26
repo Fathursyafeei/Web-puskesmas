@@ -53,6 +53,18 @@
 /* 2. Mixin */
 /* 3. Bootstrap Override */
 /* 3.1 Misc */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+::-webkit-scrollbar-thumb {
+	background: #3a3c58 !important;
+	border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+	background: #f8f8f8;
+}
+::-webkit-scrollbar {
+	width: 0.625rem;
+}
 .btn:focus,
 .btn:active,
 .btn:active:focus,
@@ -554,7 +566,7 @@ select.form-control:not([size]):not([multiple]) {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background: #6777ef url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center
+	background: #bcebb7 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center
 		center/50% 50%;
 	color: #fff;
 	z-index: 1;
@@ -2610,35 +2622,35 @@ a.dropdown-item.active {
 /* 4.1 Misc */
 /* nunito-regular - latin */
 @font-face {
-	font-family: "Nunito";
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 400;
-	src: url("../fonts/nunito-v9-latin-regular.eot");
+	src: url("../fonts/Poppins-Medium.ttf");
 	/* IE9 Compat Modes */
-	src: local("Nunito Regular"), local("Nunito-Regular"), url("../fonts/nunito-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-regular.woff2") format("woff2"),
-		url("../fonts/nunito-v9-latin-regular.woff") format("woff"), url("../fonts/nunito-v9-latin-regular.ttf") format("truetype"), url("../fonts/nunito-v9-latin-regular.svg#Nunito") format("svg");
+	/* src: local("Poppins-Regular"), local("Poppins-Regular"), url("../fonts/Poppins-Regular.ttf") format("embedded-opentype"), url("../fonts/nunito-v9-latin-regular.woff2") format("woff2"),
+		url("../fonts/nunito-v9-latin-regular.woff") format("woff"), url("../fonts/nunito-v9-latin-regular.ttf") format("truetype"), url("../fonts/nunito-v9-latin-regular.svg#Nunito") format("svg"); */
 	/* Legacy iOS */
 }
 /* nunito-600 - latin */
 @font-face {
-	font-family: "Nunito";
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 600;
-	src: url("../fonts/nunito-v9-latin-600.eot");
+	src: url("../fonts/Poppins-SemiBold.ttf");
 	/* IE9 Compat Modes */
-	src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("../fonts/nunito-v9-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-600.woff2") format("woff2"),
-		url("../fonts/nunito-v9-latin-600.woff") format("woff"), url("../fonts/nunito-v9-latin-600.ttf") format("truetype"), url("../fonts/nunito-v9-latin-600.svg#Nunito") format("svg");
+	/* src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("../fonts/nunito-v9-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-600.woff2") format("woff2"),
+		url("../fonts/nunito-v9-latin-600.woff") format("woff"), url("../fonts/nunito-v9-latin-600.ttf") format("truetype"), url("../fonts/nunito-v9-latin-600.svg#Nunito") format("svg"); */
 	/* Legacy iOS */
 }
 /* nunito-700 - latin */
 @font-face {
-	font-family: "Nunito";
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 700;
-	src: url("../fonts/nunito-v9-latin-700.eot");
+	src: url("../fonts/Poppins-Bold.ttf");
 	/* IE9 Compat Modes */
-	src: local("Nunito Bold"), local("Nunito-Bold"), url("../fonts/nunito-v9-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-700.woff2") format("woff2"),
-		url("../fonts/nunito-v9-latin-700.woff") format("woff"), url("../fonts/nunito-v9-latin-700.ttf") format("truetype"), url("../fonts/nunito-v9-latin-700.svg#Nunito") format("svg");
+	/* src: local("Nunito Bold"), local("Nunito-Bold"), url("../fonts/nunito-v9-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-700.woff2") format("woff2"),
+		url("../fonts/nunito-v9-latin-700.woff") format("woff"), url("../fonts/nunito-v9-latin-700.ttf") format("truetype"), url("../fonts/nunito-v9-latin-700.svg#Nunito") format("svg"); */
 	/* Legacy iOS */
 }
 /* nunito-800 - latin */
@@ -2646,7 +2658,7 @@ a.dropdown-item.active {
 	font-family: "Nunito";
 	font-style: normal;
 	font-weight: 800;
-	src: url("../fonts/nunito-v9-latin-800.eot");
+	src: url("../fonts/Poppins-ExtraBold.ttf");
 	/* IE9 Compat Modes */
 	src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"), url("../fonts/nunito-v9-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-800.woff2") format("woff2"),
 		url("../fonts/nunito-v9-latin-800.woff") format("woff"), url("../fonts/nunito-v9-latin-800.ttf") format("truetype"), url("../fonts/nunito-v9-latin-800.svg#Nunito") format("svg");
@@ -2668,7 +2680,7 @@ body {
 	background-color: #f8f8f8;
 	font-size: 14px;
 	font-weight: 400;
-	font-family: "Nunito", "Segoe UI", arial;
+	font-family: "Poppins", "Segoe UI", arial;
 	color: #3a3c58;
 }
 
@@ -3034,7 +3046,7 @@ pre {
 	border-radius: 5px;
 	height: 8px;
 	width: 30px;
-	background-color: #6777ef;
+	background-color: #adf8a6;
 	display: inline-block;
 	float: left;
 	margin-top: 6px;
@@ -3384,7 +3396,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:befor
 	right: initial;
 	bottom: 0;
 	height: 2px;
-	background-color: #6777ef;
+	background-color: #bcebb7;
 	transition: all 0.5s;
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link span {
@@ -3395,7 +3407,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link i {
 	font-size: 16px;
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:hover {
-	color: #191d21 !important;
+	color: #3a3c58 !important;
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu {
 	padding: 0;
@@ -3422,7 +3434,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item:hover > .nav-link {
 	background-color: #fcfcfd;
-	color: #191d21;
+	color: #3a3c58;
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item:hover > .dropdown-menu {
 	display: block !important;
@@ -3431,7 +3443,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item.active > .nav-link,
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
-	background-color: #6777ef;
+	background-color: #bcebb7;
 	color: #fff;
 }
 body.layout-3 .main-content {
@@ -3484,7 +3496,7 @@ body.layout-3 .main-footer {
 }
 .main-sidebar .sidebar-menu li.menu-header {
 	padding: 3px 15px;
-	color: #bcc1c6;
+	color: #e5f0e8;
 	font-size: 10px;
 	text-transform: uppercase;
 	letter-spacing: 1.3px;
@@ -3522,7 +3534,7 @@ body.layout-3 .main-footer {
 	background-color: #fcfcfd;
 }
 .main-sidebar .sidebar-menu li.active a {
-	color: #6777ef;
+	color: #3a3c58;
 	font-weight: 600;
 	background-color: #fcfcfd;
 }
@@ -3608,7 +3620,7 @@ body.layout-3 .main-footer {
 }
 
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
-	background-color: #6777ef;
+	background-color: #adf8a6;
 	color: #fff;
 }
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a {
@@ -3635,7 +3647,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
 	transform: translateY(-50%);
 	height: 25px;
 	width: 4px;
-	background-color: #6777ef;
+	background-color: #3a3c58;
 }
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
 	padding-left: 61px;
