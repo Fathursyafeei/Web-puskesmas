@@ -1,3 +1,15 @@
+<?php
+include_once('../config/connection.php');
+include_once('../lib/helper.php');
+
+if($_POST) {
+  $data = Helper::arrayInputSanitizer($_POST, $connection);
+  unset($data['submit']);
+  var_dump($data); // what the hell, why this variable return NULL ???
+  var_dump($_POST);
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -30,7 +42,7 @@
 
   <!-- FavIcon -->
   <link rel="shortcut icon" href="../assets/img/logo-puskesmas.png">
-  <title>Registrasi | UPT PUSKESMAS KENTARA</title>
+  <title>Login | UPT PUSKESMAS KENTARA</title>
 
 </head>
 
@@ -46,7 +58,7 @@
           aria-label="Toggle navigation">
           <span><i class="ph-rows-fill"></i></span>
         </button>
-        <a class="navbar-brand" href="../index.html#home">
+        <a class="navbar-brand" href="#">
           <div class="digital">
             <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
             <span class="fs-6">UPT PUSKESMAS KENTARA</span>
@@ -57,23 +69,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link  nav-hover" aria-current="page" href="../index.html#home">Home</a>
+            <a class="nav-link active nav-hover" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="./profil.html">Profil</a>
+            <a class="nav-link nav-hover" href="#">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../index.html#layanan">Layanan</a>
+            <a class="nav-link nav-hover" href="#">Layanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../index.html#berita">Berita</a>
+            <a class="nav-link nav-hover" href="#">Berita</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../Hubungi/hubungi.html">Hubungi kami</a>
+            <a class="nav-link nav-hover" href="#">Hubungi kami</a>
           </li>
-
         </ul>
-        <a class="btn btn-custom" type="submit" href="#">Daftar</a>
+        <button class="btn btn-custom" type="submit">Masuk</button>
       </div>
     </div>
   </nav>
@@ -98,27 +109,19 @@
     <div class="container">
       <div class="row justify-content-center align-items-center min-vh-100">
         <div class="col">
-          <h2 class="text-center title mb-3">Registrasi</h2>
+          <h2 class="text-center title mb-3">Silahkan Masuk </h2>
           <!-- card -->
           <div class="card  shadow-sm mx-auto login-card">
             <div class="card-body ">
               <img src="../assets/img/logo-puskesmas.png" class="img-fluid d-flex mt-2 mx-auto align-items-center"
                 alt="" width="12%" />
-              <form action="./commands/login-user.php" method="POST" enctype="multipart/form-data">
+              <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form__div">
-                  <input required type="text" name="nama" class="form__input" autocomplete="off" placeholder="" />
-                  <label for="InputNama" class="form__label">Nama Lengkap </label>
-                </div>
-                <div class="form__div">
-                  <input required type="text" name="nama" class="form__input" autocomplete="off" placeholder="" />
-                  <label for="InputNama" class="form__label">NIP </label>
-                </div>
-                <div class="form__div">
-                  <select class=" form__input" aria-label="Default select example">
-                    <option selected>Pegawai/Staff</option>
-                    <option value="1">Kepala Puskemas</option>
-                    <option value="2">Bendahara Puskesmas</option>
-                    <option value="3">SuperAdmin</option>
+                  <select name="jabatan" class=" form__input" aria-label="Default select example">
+                    <option value="1">Pegawai/Staff</option>
+                    <option value="2">Kepala Puskemas</option>
+                    <option value="3">Bendahara Puskesmas</option>
+                    <option value="4">SuperAdmin</option>
                   </select>
                   <!-- <input required type="text" name="nama" class="form__input" autocomplete="off" placeholder="" /> -->
                   <label for="InputNama" class="form__label">Jabatan </label>
@@ -131,10 +134,13 @@
                   <input required type="password" name="password" class="form__input" />
                   <label for="InputPassword" class="form__label">Kata Sandi</label>
                 </div>
-
-                <div class="mt-3 d-flex justify-content-between align-items-center ">
-                  <a href="./login.html" class="btn btn-link text-decoration-none p-0">Sudah Punya Akun? </a>
-                  <a name="login" type="submit" class="btn btn-custom float-end">Daftar</a>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="remember_password" />
+                  <label class="form-check-label" for="remember_password">Ingat Kata Sandi</label>
+                </div>
+                <div class="mt-2 d-flex justify-content-between align-items-center ">
+                  <a href="./registrasi.html" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
+                  <input value="Login" name="submit" type="submit" class="btn btn-custom float-end"></input>
                 </div>
               </form>
             </div>
@@ -157,24 +163,23 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h5 class="text-center">Halaman</h5>
           <ul class="nav flex-column align-items-center">
-            <li class="nav-item mb-2"><a href="../index.html#home" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="../index.html" class="nav-link p-0 text-muted">Home</a></li>
             <li class="nav-item mb-2"><a href="../profil/profil.html" class="nav-link p-0 text-muted">Profil</a></li>
             <li class="nav-item mb-2"><a href="../index.html#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
             <li class="nav-item mb-2"><a href="../index.html#berita" class="nav-link p-0 text-muted">Berita</a></li>
-            <li class="nav-item mb-2"><a href="./Hubungi/hubungi.html" class="nav-link p-0 text-muted">Hubungi
-                kami</a>
+            <li class="nav-item mb-2"><a href="../Hubungi/hubungi.html" class="nav-link p-0 text-muted">Hubungi kami</a>
             </li>
           </ul>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 footer-middle">
-          <a class="navbar-brand" href="#home">
-            <div class="digital">
-              <img src="./assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
-              <span class="fs-5 ">UPTD PUSKESMAS KENTARA</span>
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 ">
+          <a class="navbar-brand " href="#">
+            <div class="digital d-flex  align-items-center mx-sm-auto">
+              <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
+              <span class="fs-5 ps-2">UPT PUSKESMAS KENTARA</span>
             </div>
           </a>
           <p class="description">
-            UPTD. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
+            UPT. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
             untuk semua orang.
           </p>
         </div>
@@ -191,7 +196,7 @@
       </div>
       <div class="divider mt-4 "></div>
       <div class="d-flex justify-content-between pt-4 ">
-        <p>&copy; 2021 UPTD. Puskesmas Kentara Kab. Dairi.</p>
+        <p>&copy; 2021 UPT. Puskesmas Kentara Kab. Dairi.</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3">
             <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">
@@ -236,7 +241,23 @@
   </footer>
   <!-- EndOf Footer -->
 
+  <!-- script js Custom -->
+  <script src="../assets/scripts/script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const cardService = document.querySelectorAll('.card-service');
 
+    cardService.forEach((service, i) => {
+      service.dataset.aos = 'zoom-in-down';
+      service.dataset.aosDelay = i * 100;
+      service.dataset.aosDuration = 1000;
+    });
+
+    AOS.init({
+      once: true,
+      duration: 2000,
+    });
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
   <script>
