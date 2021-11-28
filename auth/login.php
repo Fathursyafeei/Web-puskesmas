@@ -1,8 +1,8 @@
 <?php
-include_once('../config/connection.php');
+include_once('../lib/connection.php');
 include_once('../lib/helper.php');
 
-if($_POST) {
+if ($_POST) {
   $data = Helper::arrayInputSanitizer($_POST, $connection);
   unset($data['submit']);
   var_dump($data); // what the hell, why this variable return NULL ???
@@ -19,15 +19,13 @@ if($_POST) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
   <!-- Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Custom Css -->
   <link rel="stylesheet" href="../assets/css/styles.css">
@@ -53,9 +51,7 @@ if($_POST) {
   <nav class="navbar sticky-top navbar-expand-lg navbar-light navCustom shadow-sm" id="Navbar">
     <div class="container-fluid">
       <div class="nav-bar">
-        <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ph-rows-fill"></i></span>
         </button>
         <a class="navbar-brand" href="#">
@@ -113,8 +109,7 @@ if($_POST) {
           <!-- card -->
           <div class="card  shadow-sm mx-auto login-card">
             <div class="card-body ">
-              <img src="../assets/img/logo-puskesmas.png" class="img-fluid d-flex mt-2 mx-auto align-items-center"
-                alt="" width="12%" />
+              <img src="../assets/img/logo-puskesmas.png" class="img-fluid d-flex mt-2 mx-auto align-items-center" alt="" width="12%" />
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form__div">
                   <select name="jabatan" class=" form__input" aria-label="Default select example">
@@ -202,11 +197,8 @@ if($_POST) {
             <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                 <rect width="256" height="256" fill="none"></rect>
-                <polygon points="160 128 112 96 112 160 160 128" fill="none" stroke="#000000" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="16"></polygon>
-                <path
-                  d="M24,128c0,29.75546,3.07414,47.21382,5.41108,56.18664a15.91682,15.91682,0,0,0,9.63282,10.89441C72.52083,207.94575,128,207.5925,128,207.5925s55.47857.35324,88.9558-12.51137a15.91684,15.91684,0,0,0,9.6329-10.89432C228.92572,175.214,232,157.75554,232,128s-3.07415-47.21382-5.41108-56.18664A15.91682,15.91682,0,0,0,216.9561,60.919C183.47917,48.05425,128,48.4075,128,48.4075s-55.47857-.35324-88.9558,12.51137a15.91684,15.91684,0,0,0-9.6329,10.89432C27.07427,80.786,24,98.24446,24,128Z"
-                  fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                <polygon points="160 128 112 96 112 160 160 128" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polygon>
+                <path d="M24,128c0,29.75546,3.07414,47.21382,5.41108,56.18664a15.91682,15.91682,0,0,0,9.63282,10.89441C72.52083,207.94575,128,207.5925,128,207.5925s55.47857.35324,88.9558-12.51137a15.91684,15.91684,0,0,0,9.6329-10.89432C228.92572,175.214,232,157.75554,232,128s-3.07415-47.21382-5.41108-56.18664A15.91682,15.91682,0,0,0,216.9561,60.919C183.47917,48.05425,128,48.4075,128,48.4075s-55.47857-.35324-88.9558,12.51137a15.91684,15.91684,0,0,0-9.6329,10.89432C27.07427,80.786,24,98.24446,24,128Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
               </svg>
             </a>
           </li>
@@ -216,8 +208,7 @@ if($_POST) {
                 <rect width="256" height="256" fill="none"></rect>
                 <circle cx="128" cy="128" r="40" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="16">
                 </circle>
-                <rect x="36" y="36" width="184" height="184" rx="48" stroke-width="16" stroke="#000000"
-                  stroke-linecap="round" stroke-linejoin="round" fill="none"></rect>
+                <rect x="36" y="36" width="184" height="184" rx="48" stroke-width="16" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none"></rect>
                 <circle cx="180" cy="75.99998" r="12"></circle>
               </svg>
             </a>
@@ -226,12 +217,9 @@ if($_POST) {
             <a class="link-dark" href="https://www.facebook.com/Puskesmas-Kentara-101173815152436/">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                 <rect width="256" height="256" fill="none"></rect>
-                <circle cx="128" cy="128" r="96" fill="none" stroke="#000000" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="16"></circle>
-                <path d="M168,88.00094H152a24,24,0,0,0-24,24v112" fill="none" stroke="#000000" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="16"></path>
-                <line x1="96" y1="144.00094" x2="160" y2="144.00094" fill="none" stroke="#000000" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="16"></line>
+                <circle cx="128" cy="128" r="96" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+                <path d="M168,88.00094H152a24,24,0,0,0-24,24v112" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                <line x1="96" y1="144.00094" x2="160" y2="144.00094" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
               </svg>
             </a>
           </li>
@@ -270,8 +258,7 @@ if($_POST) {
 
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
 
 

@@ -75,7 +75,7 @@
 }
 
 a {
-	color: #6777ef;
+	color: #8ac185;
 	font-weight: 500;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -1403,18 +1403,18 @@ table tr:hover .table-links {
 
 /* 3.10 Pagination */
 .page-item .page-link {
-	color: #6777ef;
-	border-radius: 3px;
+	color: #8ac185;
+	border-radius: 8px;
 	margin: 0 3px;
 }
 .page-item.active .page-link {
-	background-color: #6777ef;
-	border-color: #6777ef;
+	background-color: #bcebb7;
+	border-color: #bcebb7;
 }
 .page-item.disabled .page-link {
 	border-color: transparent;
 	background-color: #f9fafe;
-	color: #6777ef;
+	color: #8ac185;
 	opacity: 0.6;
 }
 
@@ -1422,11 +1422,13 @@ table tr:hover .table-links {
 	border-color: transparent;
 	background-color: #f9fafe;
 	font-weight: 600;
+	transition: 0.2s;
 }
 .page-link:hover {
-	background-color: #6777ef;
+	background-color: #bcebb7;
 	color: #fff;
 	border-color: transparent;
+	transform: translateY(-2px) scale(120%);
 }
 .page-link:focus {
 	box-shadow: none;
