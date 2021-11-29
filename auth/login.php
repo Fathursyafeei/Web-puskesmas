@@ -1,12 +1,29 @@
 <?php
+session_start();
 include_once('../lib/connection.php');
 include_once('../lib/helper.php');
+
+$fail = FALSE;
+
+if(isset($_SESSION['logged']) && ($_SESSION['logged'] != NULL)) {
+  header('Location: ../dashboard/index.php');
+}
 
 if ($_POST) {
   $data = Helper::arrayInputSanitizer($_POST, $connection);
   unset($data['submit']);
-  var_dump($data); // what the hell, why this variable return NULL ???
-  var_dump($_POST);
+
+  $sql = sprintf("SELECT * FROM users WHERE email='%s' AND jabatan=%d", $data['email'], $data['jabatan']);
+  $query = $connection->query($sql);
+
+  $result = $query->fetch_assoc();
+  if($result && password_verify($_POST['password'], $result['password'])) {
+    unset($result['password']);
+    $_SESSION['logged'] = $result;
+    header('Location: ../dashboard/index.php');
+  } else {
+    $fail = TRUE;
+  }
 }
 
 ?>
@@ -110,6 +127,13 @@ if ($_POST) {
           <div class="card  shadow-sm mx-auto login-card">
             <div class="card-body ">
               <img src="../assets/img/logo-puskesmas.png" class="img-fluid d-flex mt-2 mx-auto align-items-center" alt="" width="12%" />
+              
+              <?php if ($fail) : ?>
+                <div class="alert alert-danger my-1" role="alert">
+                  Email atau password yang kamu masukkan salah
+                </div>
+              <?php endif; ?>
+
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form__div">
                   <select name="jabatan" class=" form__input" aria-label="Default select example">
@@ -134,7 +158,7 @@ if ($_POST) {
                   <label class="form-check-label" for="remember_password">Ingat Kata Sandi</label>
                 </div>
                 <div class="mt-2 d-flex justify-content-between align-items-center ">
-                  <a href="./registrasi.html" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
+                  <a href="./registrasi.php" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
                   <input value="Login" name="submit" type="submit" class="btn btn-custom float-end"></input>
                 </div>
               </form>
