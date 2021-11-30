@@ -6,3 +6,19 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
+
+embed {
+	max-width: 100%;
+}
+
+@media (min-width: 768px) {
+	embed {
+		width: 65%;
+	}
+}
+
+@media (min-width: 992px) {
+	embed {
+		width: 50%;
+	}
+}

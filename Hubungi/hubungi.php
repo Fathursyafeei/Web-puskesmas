@@ -1,15 +1,3 @@
-<?php
-include_once('../lib/connection.php');
-include_once('../lib/helper.php');
-
-if ($_POST) {
-  $data = Helper::arrayInputSanitizer($_POST, $connection);
-  unset($data['submit']);
-  var_dump($data); // what the hell, why this variable return NULL ???
-  var_dump($_POST);
-}
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -40,11 +28,31 @@ if ($_POST) {
 
   <!-- FavIcon -->
   <link rel="shortcut icon" href="../assets/img/logo-puskesmas.png">
-  <title>Login | UPT PUSKESMAS KENTARA</title>
+  <title>Hubungi Kami |UPT PUSKESMAS KENTARA</title>
 
+  <style>
+    .login-card {
+      height: fit-content;
+    }
+
+    .elements div {
+      border-color: #3A3C58;
+      background-color: #E5F0E8;
+    }
+
+    .main-title {
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      .main-title {
+        width: 50%;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body id="home">
   <!-- Header -->
   <!-- <div class="header" id="header"> -->
   <!-- Navbar -->
@@ -54,10 +62,10 @@ if ($_POST) {
         <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ph-rows-fill"></i></span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand page-scroll" href="../index.php">
           <div class="digital">
             <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
-            <span class="fs-6">UPT PUSKESMAS KENTARA</span>
+            <span class="fs-6">UPTD PUSKESMAS KENTARA</span>
           </div>
         </a>
       </div>
@@ -65,27 +73,30 @@ if ($_POST) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active nav-hover" aria-current="page" href="#">Home</a>
+            <a class="nav-link  nav-hover page-scroll " aria-current="page" href="../index.php#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Profil</a>
+            <a class="nav-link nav-hover" href="../profil/profil.php">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Layanan</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#layanan">Layanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Berita</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#berita">Berita</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Hubungi kami</a>
+            <a class="nav-link nav-hover active" href="#hubungi">Hubungi kami</a>
           </li>
+
         </ul>
-        <button class="btn btn-custom" type="submit">Masuk</button>
+        <a class="btn btn-custom" type="submit" href="../auth/registrasi.php">Daftar</a>
       </div>
     </div>
   </nav>
-  <!-- End Of Navbar -->
-  <section class="login" id="login">
+
+
+  <!-- Content -->
+  <section class="Hubungi" id="Hubungi">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -102,41 +113,41 @@ if ($_POST) {
 
 
     </div>
+
     <div class="container">
       <div class="row justify-content-center align-items-center min-vh-100">
         <div class="col">
-          <h2 class="text-center title mb-3">Silahkan Masuk </h2>
+          <div class="main-title text-center text-break  mx-auto mb-5 ">
+            <h2 class="title mb-3 fs-1">Hubungi Kami </h2>
+            <p class="description mb-3 ">Bila ada tanggapan, Kritik maupun Saran mengenai Puskesmas baik dalam
+              segi
+              Pelayanan ataupun Kinerja tenaga kerja yang ada</p>
+          </div>
           <!-- card -->
-          <div class="card  shadow-sm mx-auto login-card">
+          <div class="card  shadow-sm mx-auto login-card mt-3">
             <div class="card-body ">
               <img src="../assets/img/logo-puskesmas.png" class="img-fluid d-flex mt-2 mx-auto align-items-center" alt="" width="12%" />
-              <form action="" method="POST" enctype="multipart/form-data">
+              <form action="./commands/login-user.php" method="POST" enctype="multipart/form-data">
                 <div class="form__div">
-                  <select name="jabatan" class=" form__input" aria-label="Default select example">
-                    <option value="1">Pegawai/Staff</option>
-                    <option value="2">Kepala Puskemas</option>
-                    <option value="3">Bendahara Puskesmas</option>
-                    <option value="4">SuperAdmin</option>
-                  </select>
-                  <!-- <input required type="text" name="nama" class="form__input" autocomplete="off" placeholder="" /> -->
-                  <label for="InputNama" class="form__label">Jabatan </label>
+                  <input required type="text" name="nama" class="form__input" autocomplete="off" placeholder="" />
+                  <label for="InputNama" class="form__label">Nama Lengkap </label>
                 </div>
                 <div class="form__div">
                   <input required type="email" name="email" class="form__input" autocomplete="off" placeholder="" />
                   <label for="InputEmail" class="form__label">Email</label>
                 </div>
-                <div class="mb-2 form__div">
-                  <input required type="password" name="password" class="form__input" />
-                  <label for="InputPassword" class="form__label">Kata Sandi</label>
+                <div class="form__div">
+                  <input required type="text" name="subjek" class="form__input" autocomplete="off" placeholder="" />
+                  <label for="InputEmail" class="form__label">Subjek </label>
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="remember_password" />
-                  <label class="form-check-label" for="remember_password">Ingat Kata Sandi</label>
+                <div class="form__div">
+                  <!-- <input required type="email" name="email" class="form__input" autocomplete="off" placeholder="" /> -->
+                  <textarea class="form__input" autocomplete="off" placeholder="Masukkan Pesan Anda" id="floatingTextarea2" name="pesan" style="height: 5rem"></textarea>
+                  <!-- <label for="InputEmail" class="form__label">Pesan</label> -->
                 </div>
-                <div class="mt-2 d-flex justify-content-between align-items-center ">
-                  <a href="./registrasi.html" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
-                  <input value="Login" name="submit" type="submit" class="btn btn-custom float-end"></input>
-                </div>
+                <a name="login" type="submit" class="btn btn-custom float-end mt-4 d-inline-flex align-items-center fs-5">Kirim
+                  <i class="ph-paper-plane-tilt ms-2"></i>
+                </a>
               </form>
             </div>
           </div>
@@ -144,37 +155,40 @@ if ($_POST) {
         </div>
       </div>
     </div>
-
   </section>
-  <!-- </div> -->
-  <!-- End Of Header -->
+  <!-- endOf Content -->
+
+
 
 
 
   <!-- Footer -->
+
+
   <footer class="pt-5 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h5 class="text-center">Halaman</h5>
           <ul class="nav flex-column align-items-center">
-            <li class="nav-item mb-2"><a href="../index.html" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="../profil/profil.html" class="nav-link p-0 text-muted">Profil</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#berita" class="nav-link p-0 text-muted">Berita</a></li>
-            <li class="nav-item mb-2"><a href="../Hubungi/hubungi.html" class="nav-link p-0 text-muted">Hubungi kami</a>
+            <li class="nav-item mb-2"><a href="../index.php#home" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="../profil/profil.php" class="nav-link p-0 text-muted">Profil</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#berita" class="nav-link p-0 text-muted">Berita</a></li>
+            <li class="nav-item mb-2"><a href="#hubungi" class="nav-link p-0 text-muted">Hubungi
+                kami</a>
             </li>
           </ul>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 ">
-          <a class="navbar-brand " href="#">
-            <div class="digital d-flex  align-items-center mx-sm-auto">
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 footer-middle">
+          <a class="navbar-brand" href="../index.php#home">
+            <div class="digital">
               <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
-              <span class="fs-5 ps-2">UPT PUSKESMAS KENTARA</span>
+              <span class="fs-5 ">UPTD PUSKESMAS KENTARA</span>
             </div>
           </a>
           <p class="description">
-            UPT. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
+            UPTD. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
             untuk semua orang.
           </p>
         </div>
@@ -191,7 +205,7 @@ if ($_POST) {
       </div>
       <div class="divider mt-4 "></div>
       <div class="d-flex justify-content-between pt-4 ">
-        <p>&copy; 2021 UPT. Puskesmas Kentara Kab. Dairi.</p>
+        <p>&copy; 2021 UPTD. Puskesmas Kentara Kab. Dairi.</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3">
             <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">
@@ -227,26 +241,11 @@ if ($_POST) {
       </div>
     </div>
   </footer>
-  <!-- EndOf Footer -->
 
-  <!-- script js Custom -->
-  <script src="../assets/scripts/script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    const cardService = document.querySelectorAll('.card-service');
 
-    cardService.forEach((service, i) => {
-      service.dataset.aos = 'zoom-in-down';
-      service.dataset.aosDelay = i * 100;
-      service.dataset.aosDuration = 1000;
-    });
 
-    AOS.init({
-      once: true,
-      duration: 2000,
-    });
-  </script>
 
+  <!-- script  GSAP-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
   <script>
     gsap.from('.card', {

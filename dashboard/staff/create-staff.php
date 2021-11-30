@@ -1,17 +1,10 @@
-<?php
-include_once("../../lib/connection.php");
-
-$staffs = mysqli_query($connection, "SELECT * FROM staffs");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Layout &rsaquo; Default &mdash; Stisla</title>
+  <title>Forms &rsaquo; Form Validation &mdash; Stisla</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
@@ -38,7 +31,6 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
 
   <!-- FavIcon -->
   <link rel="shortcut icon" href="../../assets/img/logo-puskesmas.png" />
-
 </head>
 
 <body>
@@ -76,19 +68,19 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-3-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-3-50.png" alt="product">
                   oPhone S9 Limited Edition
                 </a>
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-2-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-2-50.png" alt="product">
                   Drone X2 New Gen-7
                 </a>
               </div>
               <div class="search-item">
                 <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-1-50.png" alt="product">
+                  <img class="mr-3 rounded" width="30" src="../assets/img/products/product-1-50.png" alt="product">
                   Headphone Blitz
                 </a>
               </div>
@@ -125,7 +117,7 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle">
+                    <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -136,7 +128,7 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-2.png" class="rounded-circle">
+                    <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Dedik Sugiharto</b>
@@ -146,7 +138,7 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-3.png" class="rounded-circle">
+                    <img alt="image" src="../assets/img/avatar/avatar-3.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -157,7 +149,7 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-4.png" class="rounded-circle">
+                    <img alt="image" src="../assets/img/avatar/avatar-4.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Ardian Rahardiansyah</b>
@@ -167,7 +159,7 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle">
+                    <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Alfa Zulkarnain</b>
@@ -271,21 +263,21 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
               UPT Puskemas Kentara</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html"><img src="../../assets/img/logo-puskesmas.png" alt="" width="24px" height="auto"></a>
+            <a href="../index-0.php"> <img src="../../assets/img/logo-puskesmas.png" alt="" width="24px" height="auto"></a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li>
-              <a href="../index-0.php" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+              <a href="index-0.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Staff/ Pegawai</li>
             <li class="dropdown active">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                 <span>Staff/Pegawai</span></a>
               <ul class="dropdown-menu">
-                <li class=active><a class="nav-link" href="./list-staff.php">Search Staff/ Pegawai</a></li>
+                <li><a class="nav-link" href="./list-staff.php">Search Staff/ Pegawai</a></li>
                 <li><a class="nav-link" href="../errors-404.php">Edit Staff / Pegawai </a></li>
-                <li><a class="nav-link" href="./create-staff.php"> Input Staff / Pegawai </a></li>
+                <li class=active><a class="nav-link" href="./create-staff.php"> Input Staff / Pegawai </a></li>
               </ul>
             </li>
             <li class="menu-header">Obat</li>
@@ -340,84 +332,89 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>List Staff</h1>
+            <h1>Input Staff & Pegawai</h1>
             <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item active"><a href="../index-0.php">Dashboard</a></div>
               <div class="breadcrumb-item"><a href="#">Staff & Pegawai</a></div>
-              <div class="breadcrumb-item">List Staff & Pegawai</div>
+              <div class="breadcrumb-item">Input Staff & Pegawai</div>
             </div>
           </div>
 
           <div class="section-body">
-            <h2 class="section-title">Cari Staff & Pegawai</h2>
-            <p class="section-lead">Layanan Untuk mengakses daftar sumber daya manusia yang ada di Puskesmas
-              Kentara.
+            <h2 class="section-title">Form Input Staff & Pegawai</h2>
+            <p class="section-lead">
+              Form untuk menginput data staff dan pegawai dari Puskesmas Kentara.
             </p>
-            <div class="card">
-              <div class="card-header d-flex flex-row justify-content-around">
-                <h4>Tabel Staff & Pegawai</h4>
-                <div class="serach-bar d-flex flex-row">
-                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-                  <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-striped table-md text-center">
-                    <tr>
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>NIP</th>
-                      <th>Jabatan</th>
-                      <th>Action</th>
-                    </tr>
-                    <?php $i = 0;
 
-                    ?>
-                    <?php while ($staff = mysqli_fetch_assoc($staffs)) :
-                    ?>
-                      <tr>
-                        <?php $i++ ?>
-                        <td><?= $i ?></td>
-                        <td><?= $staff["nama"] ?></td>
-                        <td><?= $staff["nip"] ?></td>
-                        <td><?= $staff["jabatan"]; ?></td>
-                        <td><a id='edit_data' data-toggle='modal' data-target='#modal_staff' href='detail-staff.php?id=<?= " " . "$staff[id] " . "" ?>'>Detail</a></td>
 
-                      <?php endwhile; ?>
-                  </table>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-8 col-lg-8">
+
+                <div class="card">
+                  <form action="./command/add-staff.php" method="post" enctype="multipart/form-data">
+                    <div class="card-header">
+                      <h4>Silahkan input data Staff & Pegawai</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" name="nama" class="form-control" required="">
+                      </div>
+                      <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" name="nip" class="form-control" required="">
+                      </div>
+                      <div class="form-group">
+                        <label>Golongan</label>
+                        <input type="text" name="gol" class="form-control" required="">
+                      </div>
+                      <div class="form-group">
+                        <label>Jabatan</label>
+                        <input type="text" name="jabatan" class="form-control" required="">
+                      </div>
+                      <!-- <div class="section-title">File Browser</div> -->
+                      <!-- <div class="form-group">
+                        <label>File</label>
+                        <input type="file" name="img" class="form-control">
+                      </div> -->
+
+                      <div class="custom-file">
+                        <input type="file" name="img" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                        <small id="passwordHelpInline" class="text-muted">
+                          Input Gambar pada box diatas berbentuk .png .jpg .svg
+                        </small>
+                      </div>
+                      <!-- <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required="">
+                      </div>
+                      <div class="form-group">
+                        <label>Subject</label>
+                        <input type="email" class="form-control">
+                      </div>
+                      <div class="form-group mb-0">
+                        <label>Message</label>
+                        <textarea class="form-control" required=""></textarea>
+                      </div> -->
+                    </div>
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary" name="submit">Submit</button>
+                    </div>
+                  </form>
                 </div>
+
               </div>
-              <div class="card-footer text-right">
-                <nav class="d-inline-block">
-                  <ul class="pagination mb-0">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+
             </div>
           </div>
         </section>
       </div>
-
-
-      <div class="modal" id="modal_staff" tabindex="-1" role="dialog" aria-labelledby="staff" aria-hidden="true"></div>
-      <!-- End of Modal -->
-
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Faturahman
-            Bancin</a>
+          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval
+            Azhar</a>
         </div>
         <div class="footer-right">
 
@@ -435,25 +432,11 @@ $staffs = mysqli_query($connection, "SELECT * FROM staffs");
   <script src="../assets/modules/moment.min.js"></script>
   <script src="../assets/js/stisla.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('a#edit_data').click(function() {
-        var url = $(this).attr('href');
-        $.ajax({
-          url: url,
-          success: function(response) {
-            $('#modal_staff').html(response);
-          }
-        });
-      });
-
-    });
-  </script>
+  <!-- JS Libraies -->
+  <script src="assets/modules/sweetalert/sweetalert.min.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="../assets/js/page/bootstrap-modal.js"></script>
-
+  <script src="assets/js/page/modules-sweetalert.js"></script>
 
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>

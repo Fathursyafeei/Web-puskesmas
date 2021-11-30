@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Custom Css -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Phosphor Icon -->
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- FavIcon -->
+  <link rel="shortcut icon" href="assets/img/logo-puskesmas.png" />
+  <title>UPTD PUSKESMAS KENTARA</title>
+</head>
+
+<body id="home">
+  <!-- Header -->
+  <!-- <div class="header" id="header"> -->
+  <!-- Navbar -->
+  <nav class="
+        navbar
+        sticky-top
+        navbar-expand-lg navbar-light
+        navCustom
+        shadow-sm
+      " id="Navbar">
+    <div class="container-fluid">
+      <div class="nav-bar">
+        <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ph-rows-fill"></i></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#home">
+          <div class="digital">
+            <img src="assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
+            <span class="fs-6">UPTD PUSKESMAS KENTARA</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-hover page-scroll active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="./profil/profil.php">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-hover page-scroll" href="#layanan">Layanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-hover page-scroll" href="#berita">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="./Hubungi/hubungi.php">Hubungi kami</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+        </ul>
+        <a class="btn btn-custom" type="submit" href="./auth/registrasi.php">Daftar</a>
+      </div>
+    </div>
+  </nav>
+  <!-- End Of Navbar -->
+  <section class="home" id="home">
+    <div class="container">
+      <div class="row justify-content-between align-items-center vh-100">
+        <div class="home-text col-sm-12">
+          <h1 class="title mb-3">Layanan Puskesmas</h1>
+          <p class="description mb-3">
+            Menyediakan Informasi lengkap dan akurat<br />
+            Inventaris UPTD Puskesmas Kentara <br />
+            Kabupaten Dairi
+          </p>
+          <a href="./auth/login.php" class="btn btn-custom" type="submit">Selengkapnya
+            <i class="ph-caret-right-bold"></i>
+          </a>
+        </div>
+        <div class="home-illustration img-fluid col-sm-12 mb-2">
+          <img src="assets/img/ilustration-home.svg" alt="home-illustration" width="100%" height="auto" class="home-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- </div> -->
+  <!-- End Of Header -->
+
+  <!-- Content -->
+  <section class="layanan mb-3" id="layanan">
+    <div class="container">
+      <div class="row">
+        <h2 class="title text-center my-3">Layanan</h2>
+        <div class="line"></div>
+        <div class="description my-4 text-center">
+          Kami Menyedikan Informasi serta layanan yang bisa di akses 24/7
+          serta lebih mudah dan cepat karna dapat dilakukan dimanapun dan
+          kapanpun,
+        </div>
+        <div class="wrapper mt-3">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="assets/img/icon-1.svg" class="img-fluid mx-auto mb-3" alt="icon-1" />
+                  <h5 class="card-title mb-3">Cari Staff</h5>
+                  <p class="card-text">
+                    Layanan untuk melihat daftar pegawai dan staff yang aktif
+                    di Puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="assets/img/icon-2.svg" class="img-fluid mx-auto mb-3" alt="icon-2" />
+                  <h5 class="card-title mb-3">Informasi Obat</h5>
+                  <p class="card-text">
+                    Layanan untuk melihat ketersediaan obat di Puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="assets/img/icon-6.svg" class="img-fluid p-2 mx-auto mb-3" alt="icon-6" />
+                  <h5 class="card-title mb-3">Faktur Barang</h5>
+                  <p class="card-text">
+                    Layanan untuk melihat seluruh list pembelian barang di
+                    Puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="./assets/img/icon-4.svg" class="img-fluid p-2 mx-auto" alt="icon-4" />
+                  <h5 class="card-title my-3">Infomasi Fasilitas</h5>
+                  <p class="card-text">
+                    Layanan untuk melihat ketersediaan fasilitas kesehatan
+                    yang ada di Puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="./assets/img/icon-5.svg" class="img-fluid p-2 mx-auto" alt="icon-5" />
+                  <h5 class="card-title my-3">Program Puskesmas</h5>
+                  <p class="card-text">
+                    Melihat agenda dan program yang akan di lakukan di
+                    puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card card-service">
+                <div class="
+                      card-body
+                      d-flex
+                      flex-column
+                      align-items-center
+                      justify-content-center
+                    ">
+                  <img src="./assets/img/icon-3.svg" class="img-fluid p-2 mx-auto" alt="icon-3" />
+                  <h5 class="card-title my-3">FAQ</h5>
+                  <p class="card-text">
+                    Layanan untuk pengaduan serta tanya jawab dengan
+                    Puskesmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- endOf Content -->
+
+  <!-- Article/Berita -->
+  <section class="berita" id="berita">
+    <div class="container">
+      <div class="row">
+        <h2 class="title text-center mt-5 my-3">Berita Puskesmas</h2>
+        <div class="line"></div>
+
+        <!-- Card berita -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up-right">
+              <img src="./assets/img/berita-1.jpg" class="card-img-top img-fluid" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Rakor Perencanaan Puskesmas Kentara, Puskesmas Kentara Akan
+                  Mendapatkan Akreditasi
+                </h5>
+                <p class="card-text">
+                  Dalam rangka meningkatkan mutu pelayanan khususnya dibidang
+                  kesehatan bagi masyarakat yang ada di Desa Kentara Kecamatan
+                  Lae Parira, UPT. Puskesmas Kentara mengadakan rapat
+                  koordinasi bersama dengan seluruh jajarannya yang
+                  dilaksanakan di Puskesmas Kentara pada Senin (13/2/2017).
+                </p>
+                <a href="https://suranews.wordpress.com/2017/03/01/rakor-perencanaan-puskesmas-kentara-puskesmas-kentara-akan-mendapatkan-akreditasi/" class="button-light">Baca lebih lajut<i class="ph-arrow-right-bold button-icon"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100" data-aos="fade-down">
+              <img src="./assets/img/berita-2.png" class="card-img-top img-fluid" alt="berita-2" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Danramil 03/Parongil Pantau Vaksinasi Massal UPTD Puskesmas
+                  Kentara.
+                </h5>
+                <p class="card-text">
+                  Komandan Koramil 03/Parongil (Danramil) 03/Parongil Kodim
+                  0206/Dairi Kapten Inf T. Aritonang, bersama Camat Kecamatan
+                  Lae Parira Ratna A. Florita Sitanggang, S. Sos, meninjau
+                  pelaksanaan kegiatan vaksinasi massal khusus lansia di
+                  Puskesmas Kentara Desa Kentara, Kec. Lae Parira, Kab.
+                  Dairi,Sabtu (5/6/2021).
+                </p>
+                <a href="https://medanbisnisdaily.com/news/read/2018/06/25/350965/pemkab-dairi-akan-bangun-puskesmas-pariwisata/" class="button-light">Baca lebih lajut<i class="ph-arrow-right-bold button-icon"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up-left">
+              <img src="./assets/img/berita-3.jpg" class="card-img-top img-fluid" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  4 Puskesmas Di Dairi Lulus Akreditasi Dari Kemenkes
+                </h5>
+                <p class="card-text">
+                  4 Pusat Kesehatan Masyarakat (Puskesmas) di Kabupaten Dairi
+                  Sumatera Utara lulus akreditasi oleh Komisi Akreditasi
+                  Kementerian Kesehatan Republik Indonesia. Demikian
+                  disampaikan Sekretaris Dinas Kesehatan Dairi, Frisda Turnip
+                  dalam acara penerimaan penghargaan Pastika Parahita di Balai
+                  Budaya Sidikalang, Jumat (22/6/2018).
+                </p>
+                <a href="https://dairinews.co/2018/06/22/4-puskesmas-di-dairi-lulus-akreditasi-dari-kemenkes/" class="button-light">Baca lebih lajut<i class="ph-arrow-right-bold button-icon"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- EndOf Article -->
+
+  <!-- Footer -->
+
+  <footer class="pt-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h5 class="text-center">Halaman</h5>
+          <ul class="nav flex-column align-items-center">
+            <li class="nav-item mb-2">
+              <a href="#home" class="nav-link p-0 text-muted">Home</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="./profil/profil.php" class="nav-link p-0 text-muted">Profil</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#layanan" class="nav-link p-0 text-muted">Layanan</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#berita" class="nav-link p-0 text-muted">Berita</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="./Hubungi/hubungi.php" class="nav-link p-0 text-muted">Hubungi kami</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 footer-middle">
+          <a class="navbar-brand" href="#home">
+            <div class="digital">
+              <img src="./assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
+              <span class="fs-5">UPTD PUSKESMAS KENTARA</span>
+            </div>
+          </a>
+          <p class="description">
+            UPTD. Puskesmas menyediakan informasi dan layanan inventaris yang
+            bisa di akses melalui ponsel dan online untuk semua orang.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <form>
+            <h5>Newsletter</h5>
+            <div class="d-flex w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Ketik alamat email disini</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Ketik alamat email disini" />
+              <a class="btn btn-custom" type="button">Kirim</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="divider mt-4"></div>
+      <div class="d-flex justify-content-between pt-4">
+        <p>&copy; 2021 UPTD. Puskesmas Kentara Kab. Dairi.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"></rect>
+                <polygon points="160 128 112 96 112 160 160 128" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polygon>
+                <path d="M24,128c0,29.75546,3.07414,47.21382,5.41108,56.18664a15.91682,15.91682,0,0,0,9.63282,10.89441C72.52083,207.94575,128,207.5925,128,207.5925s55.47857.35324,88.9558-12.51137a15.91684,15.91684,0,0,0,9.6329-10.89432C228.92572,175.214,232,157.75554,232,128s-3.07415-47.21382-5.41108-56.18664A15.91682,15.91682,0,0,0,216.9561,60.919C183.47917,48.05425,128,48.4075,128,48.4075s-55.47857-.35324-88.9558,12.51137a15.91684,15.91684,0,0,0-9.6329,10.89432C27.07427,80.786,24,98.24446,24,128Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="link-dark" href="https://www.instagram.com/puskesmaskentara/">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"></rect>
+                <circle cx="128" cy="128" r="40" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="16"></circle>
+                <rect x="36" y="36" width="184" height="184" rx="48" stroke-width="16" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none"></rect>
+                <circle cx="180" cy="75.99998" r="12"></circle>
+              </svg>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="link-dark" href="https://www.facebook.com/Puskesmas-Kentara-101173815152436/">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"></rect>
+                <circle cx="128" cy="128" r="96" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+                <path d="M168,88.00094H152a24,24,0,0,0-24,24v112" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                <line x1="96" y1="144.00094" x2="160" y2="144.00094" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <footer class="footer " id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <a class="navbar-brand" href="#">
+            <div class="digital">
+            <img src="/assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
+            <span class="fs-6">UPTD PUSKESMAS KENTARA</span>
+            </div>
+          </a>
+          <p class="description">
+            UPTD. Puskesmas menyediakan  informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online untuk semua orang.
+          </p>
+          <p class="trademark">&copy; UPTD. Puskesmas Kentara 2021. All rights reserved</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <!-- EndOf Footer -->
+
+  <!-- script js Custom -->
+  <!-- JQUERY 3.6.0 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="./assets/scripts/jquery.easing.1.3.js"></script>
+  <script src="./assets/scripts/script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const cardService = document.querySelectorAll(".card-service");
+
+    cardService.forEach((service, i) => {
+      service.dataset.aos = "zoom-in-down";
+      service.dataset.aosDelay = i * 100;
+      service.dataset.aosDuration = 1000;
+    });
+
+    AOS.init({
+      once: true,
+      duration: 2000,
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script>
+    gsap.from(".home-img", {
+      duration: 1,
+      y: 200,
+      opacity: 0,
+    });
+  </script>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
