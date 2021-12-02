@@ -1,6 +1,15 @@
 <?php
 include_once('../lib/connection.php');
 
+session_start();
+if (!isset($_SESSION['logged']))
+  header("Location: ../auth/login.php");
+
+
+
+$users = mysqli_query($connection, "SELECT * FROM users");
+$user = mysqli_fetch_assoc($users);
+
 $staffs = mysqli_query($connection, "SELECT * FROM staffs");
 $staff = mysqli_num_rows($staffs);
 ?>
@@ -246,7 +255,7 @@ $staff = mysqli_num_rows($staffs);
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-              <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+              <div class="d-sm-none d-lg-inline-block">Hi, <?= $_SESSION['logged']['nama'] ?></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
@@ -260,7 +269,7 @@ $staff = mysqli_num_rows($staffs);
                 <i class="fas fa-cog"></i> Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="../auth/logout.php" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -281,10 +290,6 @@ $staff = mysqli_num_rows($staffs);
             <li class="menu-header">Dashboard</li>
             <li class="active">
               <a href="./index-0.php" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-              <!-- <ul class="dropdown-menu">
-                <li class=active><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-              </ul> -->
             </li>
             <li class="menu-header">Staff/ Pegawai</li>
             <li class="dropdown">
@@ -292,10 +297,8 @@ $staff = mysqli_num_rows($staffs);
                 <span>Staff/Pegawai</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./staff/list-staff.php">Search Staff/ Pegawai</a></li>
-                <li><a class="nav-link" href="./staff/edit-staff.php">Edit Staff / Pegawai </a></li>
+                <li><a class="nav-link" href="./staff/laporan-staff.php">Laporan Staff / Pegawai </a></li>
                 <li><a class="nav-link" href="./staff/create-staff.php"> Input Staff / Pegawai </a></li>
-                <!-- <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li> -->
               </ul>
             </li>
             <li class="menu-header">Obat</li>

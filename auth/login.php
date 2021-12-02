@@ -1,12 +1,29 @@
 <?php
+session_start();
 include_once('../lib/connection.php');
 include_once('../lib/helper.php');
+
+$fail = FALSE;
+
+if (isset($_SESSION['logged']) && ($_SESSION['logged'] != NULL)) {
+  header('Location: ../dashboard/index-0.php');
+}
 
 if ($_POST) {
   $data = Helper::arrayInputSanitizer($_POST, $connection);
   unset($data['submit']);
-  var_dump($data); // what the hell, why this variable return NULL ???
-  var_dump($_POST);
+
+  $sql = sprintf("SELECT * FROM users WHERE email='%s' AND jabatan=%d", $data['email'], $data['jabatan']);
+  $query = $connection->query($sql);
+
+  $result = $query->fetch_assoc();
+  if ($result && password_verify($_POST['password'], $result['password'])) {
+    unset($result['password']);
+    $_SESSION['logged'] = $result;
+    header('Location: ../dashboard/index-0.php');
+  } else {
+    $fail = TRUE;
+  }
 }
 
 ?>
@@ -46,17 +63,22 @@ if ($_POST) {
 
 <body>
   <!-- Header -->
-  <!-- <div class="header" id="header"> -->
   <!-- Navbar -->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light navCustom shadow-sm" id="Navbar">
+  <nav class="
+        navbar
+        sticky-top
+        navbar-expand-lg navbar-light
+        navCustom
+        shadow-sm
+      " id="Navbar">
     <div class="container-fluid">
       <div class="nav-bar">
         <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ph-rows-fill"></i></span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand page-scroll" href="../index.php">
           <div class="digital">
-            <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
+            <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
             <span class="fs-6">UPT PUSKESMAS KENTARA</span>
           </div>
         </a>
@@ -65,22 +87,22 @@ if ($_POST) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active nav-hover" aria-current="page" href="#">Home</a>
+            <a class="nav-link nav-hover page-scroll" aria-current="page" href="../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Profil</a>
+            <a class="nav-link nav-hover" href="../profil/profil.php">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Layanan</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#layanan">Layanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Berita</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#berita">Berita</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="#">Hubungi kami</a>
+            <a class="nav-link nav-hover" href="../Hubungi/hubungi.php">Hubungi kami</a>
           </li>
         </ul>
-        <button class="btn btn-custom" type="submit">Masuk</button>
+        <a class="btn btn-custom" type="submit" href="../auth/registrasi.php">Daftar</a>
       </div>
     </div>
   </nav>
@@ -134,7 +156,7 @@ if ($_POST) {
                   <label class="form-check-label" for="remember_password">Ingat Kata Sandi</label>
                 </div>
                 <div class="mt-2 d-flex justify-content-between align-items-center ">
-                  <a href="./registrasi.html" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
+                  <a href="./registrasi.php" class="btn btn-link text-decoration-none p-0">Belum Punya akun? </a>
                   <input value="Login" name="submit" type="submit" class="btn btn-custom float-end"></input>
                 </div>
               </form>
@@ -158,11 +180,11 @@ if ($_POST) {
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h5 class="text-center">Halaman</h5>
           <ul class="nav flex-column align-items-center">
-            <li class="nav-item mb-2"><a href="../index.html" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="../profil/profil.html" class="nav-link p-0 text-muted">Profil</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#berita" class="nav-link p-0 text-muted">Berita</a></li>
-            <li class="nav-item mb-2"><a href="../Hubungi/hubungi.html" class="nav-link p-0 text-muted">Hubungi kami</a>
+            <li class="nav-item mb-2"><a href="../index.php" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="../profil/profil.php" class="nav-link p-0 text-muted">Profil</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#berita" class="nav-link p-0 text-muted">Berita</a></li>
+            <li class="nav-item mb-2"><a href="../Hubungi/hubungi.php" class="nav-link p-0 text-muted">Hubungi kami</a>
             </li>
           </ul>
         </div>
@@ -230,7 +252,7 @@ if ($_POST) {
   <!-- EndOf Footer -->
 
   <!-- script js Custom -->
-  <script src="../assets/scripts/script.js"></script>
+  <!-- <script src="../assets/scripts/script.js"></script> -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     const cardService = document.querySelectorAll('.card-service');

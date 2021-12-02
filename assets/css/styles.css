@@ -5,13 +5,13 @@
 	font-family: "Poppins", sans-serif;
 }
 
-/* *:before,
+*:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 html {
 	scroll-behavior: smooth !important;
@@ -97,15 +97,18 @@ body {
 }
 
 /* Home */
+
 .home {
 	background-color: #fff;
 }
 
-.home-illustration {
+/* .home-illustration {
+	
 	transition: all ease-in-out 1s;
-}
+} */
 
 /* Content */
+
 section#layanan,
 section#berita {
 	background-color: #f8f8f8;

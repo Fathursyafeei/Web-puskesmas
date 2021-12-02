@@ -1,28 +1,7 @@
 <?php
 include_once("../../lib/connection.php");
 
-// $staffs = mysqli_query($connection, "SELECT * FROM staffs");
-
-$jlhDataPerHalaman = 5;
-$data = mysqli_query($connection, "SELECT * FROM staffs");
-$jlhData = mysqli_num_rows($data);
-$jlhHalaman = ceil($jlhData / $jlhDataPerHalaman);
-$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-
-$awalData = ($jlhDataPerHalaman * $halamanAktif) - $jlhDataPerHalaman;
-
-$staffs = mysqli_query($connection, "SELECT * FROM staffs LIMIT $awalData, $jlhDataPerHalaman");
-
-
-if (isset($_POST["cari"])) {
-  $keyword = $_POST["keyword"];
-  $cari = mysqli_query($connection, "SELECT * FROM staffs WHERE 
-  nama LIKE '%" . $keyword . "%' OR 
-  nip LIKE '%" . $keyword . "%' OR 
-  jabatan LIKE '%" . $keyword . "%' 
-  ");
-  $staffs = $cari;
-}
+$staffs = mysqli_query($connection, "SELECT * FROM staffs");
 
 ?>
 
@@ -59,6 +38,9 @@ if (isset($_POST["cari"])) {
 
   <!-- FavIcon -->
   <link rel="shortcut icon" href="../../assets/img/logo-puskesmas.png" />
+
+
+  <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
 </head>
 
@@ -304,8 +286,8 @@ if (isset($_POST["cari"])) {
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                 <span>Staff/Pegawai</span></a>
               <ul class="dropdown-menu">
-                <li class=active><a class="nav-link" href="./list-staff.php">Search Staff/ Pegawai</a></li>
-                <li><a class="nav-link" href="./laporan-staff.php">Laporan Staff / Pegawai </a></li>
+                <li><a class="nav-link" href="./list-staff.php">Search Staff/ Pegawai</a></li>
+                <li class=active><a class="nav-link" href="./laporan-staff.php">Laporan Staff / Pegawai </a></li>
                 <li><a class="nav-link" href="./create-staff.php"> Input Staff / Pegawai </a></li>
               </ul>
             </li>
@@ -361,36 +343,36 @@ if (isset($_POST["cari"])) {
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>List Staff</h1>
+            <h1>Laporan Staff</h1>
             <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item active"><a href="../index-0.php">Dashboard</a></div>
               <div class="breadcrumb-item"><a href="#">Staff & Pegawai</a></div>
-              <div class="breadcrumb-item">List Staff & Pegawai</div>
+              <div class="breadcrumb-item">Laporan Staff & Pegawai</div>
             </div>
           </div>
 
           <div class="section-body">
-            <h2 class="section-title">Cari Staff & Pegawai</h2>
-            <p class="section-lead">Layanan Untuk mengakses daftar sumber daya manusia yang ada di Puskesmas
+            <h2 class="section-title">Laporan Staff & Pegawai</h2>
+            <p class="section-lead">Layanan Untuk mendownload data dari daftar sumber daya manusia yang ada di Puskesmas
               Kentara.
             </p>
             <div class="card">
-              <div class="card-header d-flex flex-row justify-content-between ">
+              <div class="card-header d-flex flex-row justify-content-around">
                 <h4>Tabel Staff & Pegawai</h4>
-                <form action="" method="post" class="search-bar d-flex flex-row">
-                  <input class="form-control" type="search" name="keyword" autofocus autocomplete="off" placeholder="Masukkan Keyword" aria-label="Search" data-width="250">
-                  <button class="btn" type="submit" name="cari"><i class="fas fa-search"></i></button>
-                </form>
+                <!-- <div class="serach-bar d-flex flex-row">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
+                  <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                </div> -->
               </div>
               <div class="card-body p-0">
                 <div class="table-responsive">
-                  <table class="table table-striped table-md text-center">
+                  <table class="table table-striped table-md text-center" id="tableExport">
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
                       <th>NIP</th>
                       <th>Jabatan</th>
-                      <th>Action</th>
+                      <th>Golongan</th>
                     </tr>
                     <?php $i = 0;
 
@@ -403,52 +385,29 @@ if (isset($_POST["cari"])) {
                         <td><?= $staff["nama"] ?></td>
                         <td><?= $staff["nip"] ?></td>
                         <td><?= $staff["jabatan"]; ?></td>
-                        <td><a id='edit_data' data-toggle='modal' data-target='#modal_staff' href='detail-staff.php?id=<?= " " . "$staff[id] " . "" ?>'>Detail</a></td>
+                        <td><?= $staff['gol'] ?></td>
 
                       <?php endwhile; ?>
                   </table>
                 </div>
               </div>
-              <div class="card-footer text-right">
-                <nav class="d-inline-block">
-                  <ul class="pagination mb-0">
-                    <?php if (!isset($_POST["cari"])) : ?>
-
-                      <!-- pag-left -->
-                      <?php if ($halamanAktif > 1) : ?>
-                        <li class="page-item">
-                          <a class="page-link" href="?halaman= <?= $halamanAktif - 1 ?>" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-                      <?php else : ?>
-                        <li class="page-item disabled">
-                          <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-                      <?php endif ?>
-
-                      <!-- pag-num -->
-                      <?php for ($i = 1; $i <= $jlhHalaman; $i++) : ?>
-                        <?php if ($i == $halamanAktif) : ?>
-                          <li class="page-item active"><a class="page-link" href="?halaman=<?= $i ?>"><?= $i ?> <span class="sr-only">(current)</span></a></li>
-                        <?php else : ?>
-                          <li class="page-item">
-                            <a class="page-link" href="?halaman=<?= $i ?>"><?= $i ?></a>
-                          </li>
-                        <?php endif; ?>
-                      <?php endfor; ?>
-
-                      <!-- pag-right -->
-                      <?php if ($halamanAktif < $jlhHalaman) : ?>
-                        <li class="page-item">
-                          <a class="page-link" href="?halaman= <?= $halamanAktif + 1 ?>" tabindex="-1"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-                      <?php else : ?>
-                        <li class="page-item disabled">
-                          <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-                      <?php endif ?>
-
-                    <?php endif ?>
-                  </ul>
+              <div class="card-footer">
+                <nav class="d-inline-block d-flex justify-content-around align-items-center">
+                  <a class="btn btn-success mx-2" id="btn-export" name="submit">Simpan sebagai Excel<span><i class="far fa-file-excel"></i></span></a>
+                  <a class="btn btn-success mx-2 my-2" id="btn-export2" name="submit">Simpan sebagai PDF<span><i class="far fa-file-pdf"></i></span> </a>
+                  <!-- <ul class="pagination mb-0">
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                    </li>
+                  </ul> -->
                 </nav>
               </div>
             </div>
@@ -462,7 +421,7 @@ if (isset($_POST["cari"])) {
 
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Faturahman
+          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://www.linkedin.com/in/m-faturahman-bancin-984758201/">Muhamad Faturahman
             Bancin</a>
         </div>
         <div class="footer-right">
@@ -495,6 +454,63 @@ if (isset($_POST["cari"])) {
 
     });
   </script>
+
+  <!-- EXport to pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function html_table_to_excel(type) {
+      const data = document.getElementById('tableExport');
+
+
+      const file = XLSX.utils.table_to_book(data, {
+
+        sheet: "sheet1"
+      });
+
+      XLSX.write(file, {
+        bookType: type,
+        bookSST: true,
+        type: 'base64'
+      });
+
+      XLSX.writeFile(file, 'laporan pegawai.' + type);
+
+    };
+
+    const btnEkspor = document.querySelector('#btn-export');
+
+    btnEkspor.addEventListener('click', () => {
+
+
+      html_table_to_excel('xlsx');
+
+    });
+
+    const btnEkspor2 = document.querySelector('#btn-export2');
+    btnEkspor2.addEventListener('click', function() {
+
+      const element = document.getElementById('tableExport');
+      var opt = {
+        margin: 0.2,
+        filename: 'laporan pegawai/staff.pdf',
+        image: {
+          type: 'jpeg',
+          quality: 0.98
+        },
+        html2canvas: {
+          scale: 2
+        },
+        jsPDF: {
+          unit: 'in',
+          format: 'letter',
+          orientation: 'portrait'
+        }
+      };
+      html2pdf().set(opt).from(element).save();
+    })
+  </script>
+
+
 
   <!-- Page Specific JS File -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -276,7 +276,7 @@
                 <span>Staff/Pegawai</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="./list-staff.php">Search Staff/ Pegawai</a></li>
-                <li><a class="nav-link" href="../errors-404.php">Edit Staff / Pegawai </a></li>
+                <li><a class="nav-link" href="./laporan-staff.php">Laporan Staff / Pegawai </a></li>
                 <li class=active><a class="nav-link" href="./create-staff.php"> Input Staff / Pegawai </a></li>
               </ul>
             </li>
@@ -373,11 +373,6 @@
                         <label>Jabatan</label>
                         <input type="text" name="jabatan" class="form-control" required="">
                       </div>
-                      <!-- <div class="section-title">File Browser</div> -->
-                      <!-- <div class="form-group">
-                        <label>File</label>
-                        <input type="file" name="img" class="form-control">
-                      </div> -->
 
                       <div class="custom-file">
                         <input type="file" name="img" class="custom-file-input" id="customFile">
@@ -386,21 +381,10 @@
                           Input Gambar pada box diatas berbentuk .png .jpg .svg
                         </small>
                       </div>
-                      <!-- <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Subject</label>
-                        <input type="email" class="form-control">
-                      </div>
-                      <div class="form-group mb-0">
-                        <label>Message</label>
-                        <textarea class="form-control" required=""></textarea>
-                      </div> -->
+
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" name="submit">Submit</button>
+                      <button class="btn btn-primary" name="submit">Kirim Data</button>
                     </div>
                   </form>
                 </div>
@@ -413,8 +397,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval
-            Azhar</a>
+          Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://www.linkedin.com/in/m-faturahman-bancin-984758201/">Muhamad Faturahman Bancin</a>
         </div>
         <div class="footer-right">
 

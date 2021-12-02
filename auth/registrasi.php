@@ -62,15 +62,21 @@ if ($_POST) {
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light navCustom shadow-sm" id="Navbar">
+  <nav class="
+        navbar
+        sticky-top
+        navbar-expand-lg navbar-light
+        navCustom
+        shadow-sm
+      " id="Navbar">
     <div class="container-fluid">
       <div class="nav-bar">
         <button class="navbar-toggler btn-Nav border-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ph-rows-fill"></i></span>
         </button>
-        <a class="navbar-brand" href="../index.html#home">
+        <a class="navbar-brand page-scroll" href="../index.php">
           <div class="digital">
-            <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
+            <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
             <span class="fs-6">UPT PUSKESMAS KENTARA</span>
           </div>
         </a>
@@ -79,23 +85,22 @@ if ($_POST) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link  nav-hover" aria-current="page" href="../index.html#home">Home</a>
+            <a class="nav-link nav-hover page-scroll" aria-current="page" href="../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="./profil.html">Profil</a>
+            <a class="nav-link nav-hover" href="../profil/profil.php">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../index.html#layanan">Layanan</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#layanan">Layanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../index.html#berita">Berita</a>
+            <a class="nav-link nav-hover page-scroll" href="../index.php#berita">Berita</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-hover" href="../Hubungi/hubungi.html">Hubungi kami</a>
+            <a class="nav-link nav-hover" href="../Hubungi/hubungi.php">Hubungi kami</a>
           </li>
-
         </ul>
-        <a class="btn btn-custom" type="submit" href="#">Daftar</a>
+        <a class="btn btn-custom" type="submit" href="../auth/registrasi.php">Daftar</a>
       </div>
     </div>
   </nav>
@@ -191,24 +196,23 @@ if ($_POST) {
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h5 class="text-center">Halaman</h5>
           <ul class="nav flex-column align-items-center">
-            <li class="nav-item mb-2"><a href="../index.html#home" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="../profil/profil.html" class="nav-link p-0 text-muted">Profil</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
-            <li class="nav-item mb-2"><a href="../index.html#berita" class="nav-link p-0 text-muted">Berita</a></li>
-            <li class="nav-item mb-2"><a href="./Hubungi/hubungi.html" class="nav-link p-0 text-muted">Hubungi
-                kami</a>
+            <li class="nav-item mb-2"><a href="../index.php" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="../profil/profil.php" class="nav-link p-0 text-muted">Profil</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#layanan" class="nav-link p-0 text-muted">Layanan</a></li>
+            <li class="nav-item mb-2"><a href="../index.php#berita" class="nav-link p-0 text-muted">Berita</a></li>
+            <li class="nav-item mb-2"><a href="../Hubungi/hubungi.php" class="nav-link p-0 text-muted">Hubungi kami</a>
             </li>
           </ul>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 footer-middle">
-          <a class="navbar-brand" href="#home">
-            <div class="digital">
-              <img src="./assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
-              <span class="fs-5 ">UPTD PUSKESMAS KENTARA</span>
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-sm-3 ">
+          <a class="navbar-brand " href="#">
+            <div class="digital d-flex  align-items-center mx-sm-auto">
+              <img src="../assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
+              <span class="fs-5 ps-2">UPT PUSKESMAS KENTARA</span>
             </div>
           </a>
           <p class="description">
-            UPTD. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
+            UPT. Puskesmas menyediakan informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online
             untuk semua orang.
           </p>
         </div>
@@ -225,7 +229,7 @@ if ($_POST) {
       </div>
       <div class="divider mt-4 "></div>
       <div class="d-flex justify-content-between pt-4 ">
-        <p>&copy; 2021 UPTD. Puskesmas Kentara Kab. Dairi.</p>
+        <p>&copy; 2021 UPT. Puskesmas Kentara Kab. Dairi.</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3">
             <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">

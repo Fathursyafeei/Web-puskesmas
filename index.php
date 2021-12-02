@@ -25,7 +25,7 @@
 
   <!-- FavIcon -->
   <link rel="shortcut icon" href="assets/img/logo-puskesmas.png" />
-  <title>UPTD PUSKESMAS KENTARA</title>
+  <title>UPT PUSKESMAS KENTARA</title>
 </head>
 
 <body id="home">
@@ -47,7 +47,7 @@
         <a class="navbar-brand page-scroll" href="#home">
           <div class="digital">
             <img src="assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
-            <span class="fs-6">UPTD PUSKESMAS KENTARA</span>
+            <span class="fs-6 text-break text-wrap">UPTD PUSKESMAS KENTARA</span>
           </div>
         </a>
       </div>
@@ -68,18 +68,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link nav-hover" href="./Hubungi/hubungi.php">Hubungi kami</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li> -->
         </ul>
         <a class="btn btn-custom" type="submit" href="./auth/registrasi.php">Daftar</a>
       </div>
@@ -93,7 +81,7 @@
           <h1 class="title mb-3">Layanan Puskesmas</h1>
           <p class="description mb-3">
             Menyediakan Informasi lengkap dan akurat<br />
-            Inventaris UPTD Puskesmas Kentara <br />
+            Inventaris UPT Puskesmas Kentara <br />
             Kabupaten Dairi
           </p>
           <a href="./auth/login.php" class="btn btn-custom" type="submit">Selengkapnya
@@ -241,12 +229,12 @@
     <div class="container">
       <div class="row">
         <h2 class="title text-center mt-5 my-3">Berita Puskesmas</h2>
-        <div class="line"></div>
-
+        <div class="line mb-4"></div>
+        <!-- row-cols-1 row-cols-md-3 g-4 mx-auto -->
         <!-- Card berita -->
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
-          <div class="col">
-            <div class="card h-100" data-aos="fade-up-right">
+        <div class="row mx-auto">
+          <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm" data-aos="fade-up-right">
               <img src="./assets/img/berita-1.jpg" class="card-img-top img-fluid" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">
@@ -265,12 +253,12 @@
             </div>
           </div>
 
-          <div class="col">
-            <div class="card h-100" data-aos="fade-down">
+          <div class="col-sm-12 col-md-4 col-lg-4 mb-3 ">
+            <div class="card h-100 shadow-sm" data-aos="fade-down">
               <img src="./assets/img/berita-2.png" class="card-img-top img-fluid" alt="berita-2" />
               <div class="card-body">
                 <h5 class="card-title">
-                  Danramil 03/Parongil Pantau Vaksinasi Massal UPTD Puskesmas
+                  Danramil 03/Parongil Pantau Vaksinasi Massal UPT Puskesmas
                   Kentara.
                 </h5>
                 <p class="card-text">
@@ -286,8 +274,8 @@
             </div>
           </div>
 
-          <div class="col">
-            <div class="card h-100" data-aos="fade-up-left">
+          <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm" data-aos="fade-up-left">
               <img src="./assets/img/berita-3.jpg" class="card-img-top img-fluid" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">
@@ -340,11 +328,11 @@
           <a class="navbar-brand" href="#home">
             <div class="digital">
               <img src="./assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid" />
-              <span class="fs-5">UPTD PUSKESMAS KENTARA</span>
+              <span class="fs-5">UPT PUSKESMAS KENTARA</span>
             </div>
           </a>
           <p class="description">
-            UPTD. Puskesmas menyediakan informasi dan layanan inventaris yang
+            UPT. Puskesmas menyediakan informasi dan layanan inventaris yang
             bisa di akses melalui ponsel dan online untuk semua orang.
           </p>
         </div>
@@ -361,7 +349,7 @@
       </div>
       <div class="divider mt-4"></div>
       <div class="d-flex justify-content-between pt-4">
-        <p>&copy; 2021 UPTD. Puskesmas Kentara Kab. Dairi.</p>
+        <p>&copy; 2021 UPT. Puskesmas Kentara Kab. Dairi</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3">
             <a class="link-dark" href="https://www.youtube.com/channel/UCAD86R4Kc7SVVLMWqbpcfrA">
@@ -397,27 +385,6 @@
     </div>
   </footer>
 
-  <!-- <footer class="footer " id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <a class="navbar-brand" href="#">
-            <div class="digital">
-            <img src="/assets/img/logo-puskesmas.png" alt="" width="35" height="auto" class="img-fluid">
-            <span class="fs-6">UPTD PUSKESMAS KENTARA</span>
-            </div>
-          </a>
-          <p class="description">
-            UPTD. Puskesmas menyediakan  informasi dan layanan inventaris yang bisa di akses melalui ponsel dan online untuk semua orang.
-          </p>
-          <p class="trademark">&copy; UPTD. Puskesmas Kentara 2021. All rights reserved</p>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          
-        </div>
-      </div>
-    </div>
-  </footer> -->
   <!-- EndOf Footer -->
 
   <!-- script js Custom -->
